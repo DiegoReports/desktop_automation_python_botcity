@@ -50,16 +50,24 @@ def main():
     app = bot.connect_to_app(Backend.UIA, path = app_path, title="My CRM (Sample App)")
 
     # Procurando o elemento que está no contexto da janela encontrada.
-    first_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleFirstName")
+    #first_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleFirstName")
     #Inserindo o texto
-    first_field.set_text("Diego")
+    #first_field.set_text("Diego")
 
-    last_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleLastName")
-    last_field.set_text("Henrique")
+    #last_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleLastName")
+    #last_field.set_text("Henrique")
 
-    comments_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleComments")
-    coment = "Testando o BotCity Desktop Automation na aula de Python RPA do Marcelo Cruz"
-    comments_field.set_text(coment)
+    company_tab = bot.find_app_element(from_parent_window = app.top_window(), control_type = "TabItem", title = "Company ")
+    #Selecionando a aba de 'Company'
+    company_tab.select()
+
+    other_tab = bot.find_app_element(from_parent_window = app.top_window(), control_type = "TabItem", title = "Other")
+    #Selecionando a aba de 'Other'
+    other_tab.select()
+
+    #comments_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleComments")
+    #coment = "Testando o BotCity Desktop Automation na aula de Python RPA do Marcelo Cruz"
+    #comments_field.set_text(coment)
 
     # Uncomment to mark this task as finished on BotMaestro
     # maestro.finish_task(
