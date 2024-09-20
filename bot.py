@@ -54,7 +54,9 @@ def main():
     #Inserindo o texto
     first_field.set_text("Diego")
 
-
+    last_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleComments")
+    coment = "Testando o BotCity Desktop Automation na aula de Python RPA do Marcelo Cruz"
+    last_field.set_text(coment)
 
     # Uncomment to mark this task as finished on BotMaestro
     # maestro.finish_task(
