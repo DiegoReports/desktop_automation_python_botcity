@@ -57,17 +57,52 @@ def main():
     #last_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleLastName")
     #last_field.set_text("Henrique")
 
-    company_tab = bot.find_app_element(from_parent_window = app.top_window(), control_type = "TabItem", title = "Company ")
+    #company_tab = bot.find_app_element(from_parent_window = app.top_window(), control_type = "TabItem", title = "Company ")
     #Selecionando a aba de 'Company'
-    company_tab.select()
+    #company_tab.select()
 
-    other_tab = bot.find_app_element(from_parent_window = app.top_window(), control_type = "TabItem", title = "Other")
+    #other_tab = bot.find_app_element(from_parent_window = app.top_window(), control_type = "TabItem", title = "Other")
     #Selecionando a aba de 'Other'
-    other_tab.select()
+    #other_tab.select()
 
     #comments_field = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "textBoxPeopleComments")
     #coment = "Testando o BotCity Desktop Automation na aula de Python RPA do Marcelo Cruz"
     #comments_field.set_text(coment)
+
+    ##app_window = app.top_window()
+    #app_window.print_control_identifiers()
+
+
+    #Selecionando Drowpdown
+
+    try:
+        #state_dropdown = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "comboBoxPeopleAddressState")
+        #state_dropdown.click_input()
+        #state_dropdown.select("AZ")
+
+        #checkbox = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "checkBox1")
+        # Verificando estado do checkbox
+        #print(checkbox.get_toggle_state())
+
+        #if checkbox.get_toggle_state() == 0:
+        #   print("O checkbox esta desligado, clicando para flegar")
+        #   checkbox.toggle()
+        #else:
+        #    print("O checkbox já esta ligado!")
+
+        #save_btn = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "button1")
+        #save_btn.click()
+
+        #confirm_btn = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "2", control_type = "Button")
+        #confirm_btn.click()
+
+        browse_btn = bot.find_app_element(from_parent_window = app.top_window(), auto_id = "button2", control_type = "Button")
+        browse_btn.click()
+
+
+
+    except Exception as e:
+        print(f"Error: {e}")
 
     # Uncomment to mark this task as finished on BotMaestro
     # maestro.finish_task(
@@ -75,6 +110,7 @@ def main():
     #     status=AutomationTaskFinishStatus.SUCCESS,
     #     message="Task Finished OK."
     # )
+    
 
 def not_found(label):
     print(f"Element not found: {label}")
